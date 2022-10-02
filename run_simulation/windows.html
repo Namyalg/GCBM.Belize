@@ -1,0 +1,495 @@
+<!doctype html>
+<html class="no-js" lang="en">
+  <head><meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <meta name="color-scheme" content="light dark"><link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="On Docker" href="docker.html" /><link rel="prev" title="Running the Belize simulation" href="index.html" />
+
+    <meta name="generator" content="sphinx-5.2.3, furo 2022.09.29"/>
+        <title>On Windows - GCBM Belize documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?digest=d81277517bee4d6b0349d71bb2661d4890b5617c" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?digest=30d1aed668e5c3a91c3e3bf6a60b675221979f0e" />
+    
+    
+
+
+<style>
+  body {
+    --color-code-background: #f8f8f8;
+  --color-code-foreground: black;
+  
+  }
+  @media not print {
+    body[data-theme="dark"] {
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+    }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+      }
+    }
+  }
+</style></head>
+  <body>
+    
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-half" viewBox="0 0 24 24">
+    <title>Auto light/dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-shadow">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+      <circle cx="12" cy="12" r="9" />
+      <path d="M13 12h5" />
+      <path d="M13 15h4" />
+      <path d="M13 18h1" />
+      <path d="M13 9h4" />
+      <path d="M13 6h1" />
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc">
+<label class="overlay sidebar-overlay" for="__navigation">
+  <div class="visually-hidden">Hide navigation sidebar</div>
+</label>
+<label class="overlay toc-overlay" for="__toc">
+  <div class="visually-hidden">Hide table of contents sidebar</div>
+</label>
+
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <div class="visually-hidden">Toggle site navigation sidebar</div>
+        <i class="icon"><svg><use href="#svg-menu"></use></svg></i>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="../index.html"><div class="brand">GCBM Belize  documentation</div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle">
+          <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+          <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+        <div class="visually-hidden">Toggle table of contents sidebar</div>
+        <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="../index.html">
+  
+  
+  <span class="sidebar-brand-text">GCBM Belize  documentation</span>
+  
+</a><form class="sidebar-search-container" method="get" action="../search.html" role="search">
+  <input class="sidebar-search" placeholder=Search name="q" aria-label="Search">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form>
+<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
+  <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../about_belize/index.html">About Belize</a></li>
+<li class="toctree-l1 current has-children"><a class="reference internal" href="index.html">Running the Belize simulation</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l2 current current-page"><a class="current reference internal" href="#">On Windows</a></li>
+<li class="toctree-l2"><a class="reference internal" href="docker.html">On Docker</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../postprocessing/index.html">Postprocessing</a></li>
+</ul>
+
+</div>
+</div>
+
+      </div>
+      
+    </div>
+  </aside>
+  <div class="main">
+    <div class="content">
+      <div class="article-container">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
+        <div class="content-icon-container">
+          
+<div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle">
+              <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+              <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+            <div class="visually-hidden">Toggle table of contents sidebar</div>
+            <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+          </label>
+        </div>
+        <article role="main">
+          <div class="section" id="on-windows">
+<h1>On Windows<a class="headerlink" href="#on-windows" title="Permalink to this heading">#</a></h1>
+<div class="section" id="prerequisites">
+<h2>Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p>Clone the <a class="reference external" href="https://github.com/moja-global/GCBM.Belize">GCBM Belize</a> repository</p></li>
+</ol>
+<p>2. Download the installation tools from releases: <a class="reference external" href="https://github.com/moja-global/GCBM.Belize/releases/tag/install_tools">install_tools</a>, and unzip them into <cite>Standalone_GCBMtools</cite> folder. On unzipping, <cite>Standalone_GCBMtools</cite> will contain a folder tools with the folders <cite>python_3_installer</cite> and <cite>VC_redist</cite> .
+The configuration is <strong>strictly for Python3.7</strong>, it will not work with other versions</p>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="../_images/install_tools.PNG"><img alt="Unzipped contents of install tools" src="../_images/install_tools.PNG" style="width: 600px;" /></a>
+</div>
+<div class="section" id="running-the-simulation-short-version">
+<h3>Running the simulation (short version)<a class="headerlink" href="#running-the-simulation-short-version" title="Permalink to this heading">#</a></h3>
+<p>Navigate to <cite>Standalone_GCBM`, edit `run_all.bat</cite> and set the <cite>GCBM_PYTHON path</cite> and <cite>PLATFORM`</cite> variables in the <cite>USER CONFIGURATION</cite> section near the top to the correct values for your system</p>
+<p>Run <cite>run_all.bat</cite>, which performs the following preprocessing, and simulation</p>
+</div>
+<div class="section" id="running-the-project-long-version">
+<h3>Running the project (long version)<a class="headerlink" href="#running-the-project-long-version" title="Permalink to this heading">#</a></h3>
+<p>This involves running each stage of the simulation step by step. There are 12 steps in all.
+It helps in understanding the sequence of steps, inputs, outputs and dependencies to each step</p>
+</div>
+<div class="section" id="step-1">
+<h3>Step 1<a class="headerlink" href="#step-1" title="Permalink to this heading">#</a></h3>
+<p>Working directory : <strong>Standalone_GCBM\layers\tiled</strong></p>
+<div class="literal-block-wrapper docutils container" id="id1">
+<div class="code-block-caption"><span class="caption-text">Command</span><a class="headerlink" href="#id1" title="Permalink to this code">#</a></div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>    c:<span class="se">\\</span>python37<span class="se">\\</span>python.exe ..<span class="se">\\</span>..<span class="se">\\</span>tools<span class="se">\\</span>Tiler<span class="se">\\</span>tiler.py
+</pre></div>
+</div>
+</div>
+<dl class="simple">
+<dt>Description :</dt><dd><ol class="arabic simple">
+<li><dl class="simple">
+<dt>define all spatial layers needed for the simulation - can be raster or shapefile:</dt><dd><ul class="simple">
+<li><p>bounding box</p></li>
+<li><p>age</p></li>
+<li><p>classifiers</p></li>
+<li><p>disturbance events (optional)</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><p>crops all layers to a bounding box and reprojects to WGS84 processes layers into GCBM tile/block/cell format</p></li>
+<li><p>Output is a number of zip files containing GCBM-format data plus a json file containing metadata and an optional attribute table</p></li>
+</ol>
+</dd>
+</dl>
+<p>Output : Logs written into <strong>Standalone_GCBM\logs\tiler_log.txt</strong></p>
+</div>
+<div class="section" id="step-2">
+<h3>Step 2<a class="headerlink" href="#step-2" title="Permalink to this heading">#</a></h3>
+<p>Working directory : <strong>Standalone_GCBM</strong></p>
+<div class="literal-block-wrapper docutils container" id="id2">
+<div class="code-block-caption"><span class="caption-text">Command</span><a class="headerlink" href="#id2" title="Permalink to this code">#</a></div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>    tools<span class="se">\\</span>Recliner2GCBM-x64<span class="se">\\</span>Recliner2GCBM.exe -c input_database<span class="se">\\</span>recliner2gcbm_config.json
+</pre></div>
+</div>
+</div>
+<p>Description :</p>
+<ol class="arabic simple">
+<li><p>Runs the command-line version of Recliner2GCBM (<cite>toolsRecliner2GCBM-[x86x64]Recliner2GCBM.exe</cite>) on the saved project configuration made by running the GUI tool (Recliner2GCBM-GUI.exe)</p></li>
+<li><p>Note: The paths in the saved <cite>recliner2gcbm_config.json</cite> file are relative to the location of the json file</p></li>
+</ol>
+<p>Output : An SQLite database <strong>gcbm_input.db</strong> which contains all of the non-spatial data required to run the project parameters taken from a CBM3 ArchiveIndex database - disturbance matrices, default climate data, etc.</p>
+</div>
+<div class="section" id="step-3">
+<h3>Step 3<a class="headerlink" href="#step-3" title="Permalink to this heading">#</a></h3>
+<p>Working directory : <strong>Standalone_GCBM</strong></p>
+<div class="literal-block-wrapper docutils container" id="id3">
+<div class="code-block-caption"><span class="caption-text">Command</span><a class="headerlink" href="#id3" title="Permalink to this code">#</a></div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>    c:<span class="se">\\</span>python37<span class="se">\\</span>python.exe input_database<span class="se">\\</span>add_species_vol_to_bio.py input_database<span class="se">\\</span>gcbm_input.db
+</pre></div>
+</div>
+</div>
+<p>Description : Adding a generic tropical species and Vol to Bio parameters</p>
+</div>
+<div class="section" id="step-4">
+<h3>Step 4<a class="headerlink" href="#step-4" title="Permalink to this heading">#</a></h3>
+<p>Working directory : <strong>Standalone_GCBM</strong></p>
+<div class="literal-block-wrapper docutils container" id="id4">
+<div class="code-block-caption"><span class="caption-text">Command</span><a class="headerlink" href="#id4" title="Permalink to this code">#</a></div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>    c:<span class="se">\\</span>python37<span class="se">\\</span>python.exe input_database<span class="se">\\</span>modify_root_parameters.py input_database<span class="se">\\</span>gcbm_input.db
+</pre></div>
+</div>
+</div>
+<p>Description : Modify root parameters</p>
+</div>
+<div class="section" id="step-5">
+<h3>Step 5<a class="headerlink" href="#step-5" title="Permalink to this heading">#</a></h3>
+<p>Working directory : <strong>Standalone_GCBM</strong></p>
+<div class="literal-block-wrapper docutils container" id="id5">
+<div class="code-block-caption"><span class="caption-text">Command</span><a class="headerlink" href="#id5" title="Permalink to this code">#</a></div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>    c:<span class="se">\\</span>python37<span class="se">\\</span>python.exe input_database<span class="se">\\</span>modify_decay_parameters.py input_database<span class="se">\\</span>gcbm_input.db
+</pre></div>
+</div>
+</div>
+<p>Description : Modify decay parameters</p>
+</div>
+<div class="section" id="step-6">
+<h3>Step 6<a class="headerlink" href="#step-6" title="Permalink to this heading">#</a></h3>
+<p>Working directory : <strong>Standalone_GCBM</strong></p>
+<div class="literal-block-wrapper docutils container" id="id6">
+<div class="code-block-caption"><span class="caption-text">Command</span><a class="headerlink" href="#id6" title="Permalink to this code">#</a></div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>    c:<span class="se">\\</span>python37<span class="se">\\</span>python.exe input_database<span class="se">\\</span>modify_turnover_parameters.py input_database<span class="se">\\</span>gcbm_input.db
+</pre></div>
+</div>
+</div>
+<p>Description : Modify turnover parameters</p>
+</div>
+<div class="section" id="step-7">
+<h3>Step 7<a class="headerlink" href="#step-7" title="Permalink to this heading">#</a></h3>
+<p>Working directory : <strong>Standalone_GCBM</strong></p>
+<div class="literal-block-wrapper docutils container" id="id7">
+<div class="code-block-caption"><span class="caption-text">Command</span><a class="headerlink" href="#id7" title="Permalink to this code">#</a></div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>    c:<span class="se">\\</span>python37<span class="se">\\</span>python.exe input_database<span class="se">\\</span>modify_spinup_parameters.py input_database<span class="se">\\</span>gcbm_input.db
+</pre></div>
+</div>
+</div>
+<p>Description : Modify spinup parameters</p>
+</div>
+<div class="section" id="step-8">
+<h3>Step 8<a class="headerlink" href="#step-8" title="Permalink to this heading">#</a></h3>
+<p>Working directory : <strong>Standalone_GCBMgcbm_project</strong></p>
+<div class="literal-block-wrapper docutils container" id="id8">
+<div class="code-block-caption"><span class="caption-text">Command</span><a class="headerlink" href="#id8" title="Permalink to this code">#</a></div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>    update_gcbm_configuration.bat
+</pre></div>
+</div>
+</div>
+<p>Description :</p>
+<ol class="arabic simple">
+<li><p>Update the GCBM configuration</p></li>
+<li><dl class="simple">
+<dt>Automatically updates the GCBM configuration files based on the tiled layers:</dt><dd><ul class="simple">
+<li><p>scans for all of the tiled layers and adds them to the provider configuration file</p></li>
+<li><p>sets the tile, block, and cell size in the config files so that the model knows the overall resolution of the simulation (the lowest common denominator of all the tiled layer resolutions)</p></li>
+<li><p>updates the list of disturbance layers in the simulation based on the DisturbanceLayer items in tiler.py</p></li>
+<li><p>updates the initial classifier set with the classifier layers tagged in tiler.py</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ol>
+<p>Output :  Logs generated in <cite>Standalone_GCBM\logs\update_gcbm_config.log</cite></p>
+</div>
+<div class="section" id="step-9">
+<h3>Step 9<a class="headerlink" href="#step-9" title="Permalink to this heading">#</a></h3>
+<p>Working directory : <strong>Standalone_GCBMgcbm_project</strong></p>
+<div class="literal-block-wrapper docutils container" id="id9">
+<div class="code-block-caption"><span class="caption-text">Command</span><a class="headerlink" href="#id9" title="Permalink to this code">#</a></div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>    run_gcbm.bat
+</pre></div>
+</div>
+</div>
+<p>Description :</p>
+<ol class="arabic simple">
+<li><p>Run the GCBM model</p></li>
+<li><p>Project configuration is split between multiple files listed in <cite>gcbm_project\gcbm_config.cfg</cite></p></li>
+<li><p>Data source configuration (spatial layers + SQLite) is in <cite>gcbm_project\provider_config.json</cite></p></li>
+</ol>
+<ul class="simple">
+<li><p>Output : Logs generated in <cite>Standalone_GCBM\logs\Moja_Debug.log</cite></p></li>
+</ul>
+</div>
+<div class="section" id="step-10">
+<h3>Step 10<a class="headerlink" href="#step-10" title="Permalink to this heading">#</a></h3>
+<p>Working directory : <strong>Standalone_GCBMtoolsCompileGCBMSpatialOutput</strong></p>
+<div class="literal-block-wrapper docutils container" id="id10">
+<div class="code-block-caption"><span class="caption-text">Command</span><a class="headerlink" href="#id10" title="Permalink to this code">#</a></div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>    create_tiffs.bat
+</pre></div>
+</div>
+</div>
+<p>Description :</p>
+<ol class="arabic simple">
+<li><p>Compile the spatial output</p></li>
+<li><p>Generates tiff layers from raw GCBM spatial output</p></li>
+</ol>
+<p>Output :</p>
+<ol class="arabic simple">
+<li><p>A tiff layer per indicator and timestep in <cite>processed_output\spatial</cite></p></li>
+<li><p>Logs written into <cite>Standalone_GCBM\logs\create_tiffs.log`</cite></p></li>
+</ol>
+</div>
+<div class="section" id="step-11">
+<h3>Step 11<a class="headerlink" href="#step-11" title="Permalink to this heading">#</a></h3>
+<p>Working directory : <strong>Standalone_GCBMtoolsCompileGCBMResults</strong></p>
+<div class="literal-block-wrapper docutils container" id="id11">
+<div class="code-block-caption"><span class="caption-text">Command</span><a class="headerlink" href="#id11" title="Permalink to this code">#</a></div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>    compileGCBMResults.bat
+</pre></div>
+</div>
+</div>
+<p>Description :</p>
+<ol class="arabic simple">
+<li><p>Compile the GCBM results</p></li>
+<li><p>Turns the raw GCBM output database into a more user-friendly format containing most of the familiar indicators from the CBM3 Toolbox</p></li>
+<li><p>Produces <cite>processed_output\compiled_gcbm_output.db</cite></p></li>
+</ol>
+</div>
+</div>
+</div>
+
+        </article>
+      </div>
+      <footer>
+        
+        <div class="related-pages">
+          <a class="next-page" href="docker.html">
+              <div class="page-info">
+                <div class="context">
+                  <span>Next</span>
+                </div>
+                <div class="title">On Docker</div>
+              </div>
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+            </a>
+          <a class="prev-page" href="index.html">
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>Previous</span>
+                </div>
+                
+                <div class="title">Running the Belize simulation</div>
+                
+              </div>
+            </a>
+        </div>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            <div class="copyright">
+                Copyright &#169; 2022, moja global
+            </div>
+            Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+            
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            
+          </div>
+          <div class="right-details">
+            <div class="icons">
+              
+            </div>
+          </div>
+        </div>
+        
+      </footer>
+    </div>
+    <aside class="toc-drawer">
+      
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">On Windows</a><ul>
+<li><a class="reference internal" href="#prerequisites">Prerequisites</a><ul>
+<li><a class="reference internal" href="#running-the-simulation-short-version">Running the simulation (short version)</a></li>
+<li><a class="reference internal" href="#running-the-project-long-version">Running the project (long version)</a></li>
+<li><a class="reference internal" href="#step-1">Step 1</a></li>
+<li><a class="reference internal" href="#step-2">Step 2</a></li>
+<li><a class="reference internal" href="#step-3">Step 3</a></li>
+<li><a class="reference internal" href="#step-4">Step 4</a></li>
+<li><a class="reference internal" href="#step-5">Step 5</a></li>
+<li><a class="reference internal" href="#step-6">Step 6</a></li>
+<li><a class="reference internal" href="#step-7">Step 7</a></li>
+<li><a class="reference internal" href="#step-8">Step 8</a></li>
+<li><a class="reference internal" href="#step-9">Step 9</a></li>
+<li><a class="reference internal" href="#step-10">Step 10</a></li>
+<li><a class="reference internal" href="#step-11">Step 11</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
+      
+      
+    </aside>
+  </div>
+</div><script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/sphinx_highlight.js"></script>
+    <script src="../_static/scripts/furo.js"></script>
+    </body>
+</html>
