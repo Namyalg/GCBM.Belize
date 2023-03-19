@@ -2,12 +2,13 @@
 <html class="no-js" lang="en">
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
-    <meta name="color-scheme" content="light dark"><link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="On Docker" href="docker.html" /><link rel="prev" title="Running the Belize simulation" href="index.html" />
+    <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+<link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="On Docker" href="docker.html" /><link rel="prev" title="Running the Belize simulation" href="index.html" />
 
-    <meta name="generator" content="sphinx-5.3.0, furo 2022.09.29"/>
+    <!-- Generated with Sphinx 6.1.3 and Furo 2022.12.07 -->
         <title>On Windows - GCBM Belize documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?digest=d81277517bee4d6b0349d71bb2661d4890b5617c" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?digest=91d0f0d1c444bdcb17a68e833c7a53903343c195" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?digest=30d1aed668e5c3a91c3e3bf6a60b675221979f0e" />
     
     
@@ -148,7 +149,7 @@
   <span class="sidebar-brand-text">GCBM Belize  documentation</span>
   
 </a><form class="sidebar-search-container" method="get" action="../search.html" role="search">
-  <input class="sidebar-search" placeholder=Search name="q" aria-label="Search">
+  <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
   <input type="hidden" name="check_keywords" value="yes">
   <input type="hidden" name="area" value="default">
 </form>
@@ -195,34 +196,34 @@
           </label>
         </div>
         <article role="main">
-          <div class="section" id="on-windows">
+          <section id="on-windows">
 <h1>On Windows<a class="headerlink" href="#on-windows" title="Permalink to this heading">#</a></h1>
-<div class="section" id="prerequisites">
+<section id="prerequisites">
 <h2>Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink to this heading">#</a></h2>
 <ol class="arabic simple">
 <li><p>Clone the <a class="reference external" href="https://github.com/moja-global/GCBM.Belize">GCBM Belize</a> repository</p></li>
 </ol>
 <p>2. Download the installation tools from releases: <a class="reference external" href="https://github.com/moja-global/GCBM.Belize/releases/tag/install_tools">install_tools</a>, and unzip them into <cite>Standalone_GCBMtools</cite> folder. On unzipping, <cite>Standalone_GCBMtools</cite> will contain a folder tools with the folders <cite>python_3_installer</cite> and <cite>VC_redist</cite> .
 The configuration is <strong>strictly for Python3.7</strong>, it will not work with other versions</p>
-<div class="figure align-center">
+<figure class="align-center">
 <a class="reference internal image-reference" href="../_images/install_tools.PNG"><img alt="Unzipped contents of install tools" src="../_images/install_tools.PNG" style="width: 600px;" /></a>
-</div>
-<div class="section" id="running-the-simulation-short-version">
+</figure>
+<section id="running-the-simulation-short-version">
 <h3>Running the simulation (short version)<a class="headerlink" href="#running-the-simulation-short-version" title="Permalink to this heading">#</a></h3>
 <p>Navigate to <cite>Standalone_GCBM`, edit `run_all.bat</cite> and set the <cite>GCBM_PYTHON path</cite> and <cite>PLATFORM`</cite> variables in the <cite>USER CONFIGURATION</cite> section near the top to the correct values for your system</p>
 <p>Run <cite>run_all.bat</cite>, which performs the following preprocessing, and simulation</p>
-</div>
-<div class="section" id="running-the-project-long-version">
+</section>
+<section id="running-the-project-long-version">
 <h3>Running the project (long version)<a class="headerlink" href="#running-the-project-long-version" title="Permalink to this heading">#</a></h3>
 <p>This involves running each stage of the simulation step by step. There are 12 steps in all.
 It helps in understanding the sequence of steps, inputs, outputs and dependencies to each step</p>
-</div>
-<div class="section" id="step-1">
+</section>
+<section id="step-1">
 <h3>Step 1<a class="headerlink" href="#step-1" title="Permalink to this heading">#</a></h3>
 <p>Working directory : <strong>Standalone_GCBM\layers\tiled</strong></p>
 <div class="literal-block-wrapper docutils container" id="id1">
 <div class="code-block-caption"><span class="caption-text">Command</span><a class="headerlink" href="#id1" title="Permalink to this code">#</a></div>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>    c:<span class="se">\\</span>python37<span class="se">\\</span>python.exe ..<span class="se">\\</span>..<span class="se">\\</span>tools<span class="se">\\</span>Tiler<span class="se">\\</span>tiler.py
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="w">    </span>c:<span class="se">\\</span>python37<span class="se">\\</span>python.exe<span class="w"> </span>..<span class="se">\\</span>..<span class="se">\\</span>tools<span class="se">\\</span>Tiler<span class="se">\\</span>tiler.py
 </pre></div>
 </div>
 </div>
@@ -244,13 +245,13 @@ It helps in understanding the sequence of steps, inputs, outputs and dependencie
 </dd>
 </dl>
 <p>Output : Logs written into <strong>Standalone_GCBM\logs\tiler_log.txt</strong></p>
-</div>
-<div class="section" id="step-2">
+</section>
+<section id="step-2">
 <h3>Step 2<a class="headerlink" href="#step-2" title="Permalink to this heading">#</a></h3>
 <p>Working directory : <strong>Standalone_GCBM</strong></p>
 <div class="literal-block-wrapper docutils container" id="id2">
 <div class="code-block-caption"><span class="caption-text">Command</span><a class="headerlink" href="#id2" title="Permalink to this code">#</a></div>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>    tools<span class="se">\\</span>Recliner2GCBM-x64<span class="se">\\</span>Recliner2GCBM.exe -c input_database<span class="se">\\</span>recliner2gcbm_config.json
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="w">    </span>tools<span class="se">\\</span>Recliner2GCBM-x64<span class="se">\\</span>Recliner2GCBM.exe<span class="w"> </span>-c<span class="w"> </span>input_database<span class="se">\\</span>recliner2gcbm_config.json
 </pre></div>
 </div>
 </div>
@@ -260,68 +261,68 @@ It helps in understanding the sequence of steps, inputs, outputs and dependencie
 <li><p>Note: The paths in the saved <cite>recliner2gcbm_config.json</cite> file are relative to the location of the json file</p></li>
 </ol>
 <p>Output : An SQLite database <strong>gcbm_input.db</strong> which contains all of the non-spatial data required to run the project parameters taken from a CBM3 ArchiveIndex database - disturbance matrices, default climate data, etc.</p>
-</div>
-<div class="section" id="step-3">
+</section>
+<section id="step-3">
 <h3>Step 3<a class="headerlink" href="#step-3" title="Permalink to this heading">#</a></h3>
 <p>Working directory : <strong>Standalone_GCBM</strong></p>
 <div class="literal-block-wrapper docutils container" id="id3">
 <div class="code-block-caption"><span class="caption-text">Command</span><a class="headerlink" href="#id3" title="Permalink to this code">#</a></div>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>    c:<span class="se">\\</span>python37<span class="se">\\</span>python.exe input_database<span class="se">\\</span>add_species_vol_to_bio.py input_database<span class="se">\\</span>gcbm_input.db
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="w">    </span>c:<span class="se">\\</span>python37<span class="se">\\</span>python.exe<span class="w"> </span>input_database<span class="se">\\</span>add_species_vol_to_bio.py<span class="w"> </span>input_database<span class="se">\\</span>gcbm_input.db
 </pre></div>
 </div>
 </div>
 <p>Description : Adding a generic tropical species and Vol to Bio parameters</p>
-</div>
-<div class="section" id="step-4">
+</section>
+<section id="step-4">
 <h3>Step 4<a class="headerlink" href="#step-4" title="Permalink to this heading">#</a></h3>
 <p>Working directory : <strong>Standalone_GCBM</strong></p>
 <div class="literal-block-wrapper docutils container" id="id4">
 <div class="code-block-caption"><span class="caption-text">Command</span><a class="headerlink" href="#id4" title="Permalink to this code">#</a></div>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>    c:<span class="se">\\</span>python37<span class="se">\\</span>python.exe input_database<span class="se">\\</span>modify_root_parameters.py input_database<span class="se">\\</span>gcbm_input.db
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="w">    </span>c:<span class="se">\\</span>python37<span class="se">\\</span>python.exe<span class="w"> </span>input_database<span class="se">\\</span>modify_root_parameters.py<span class="w"> </span>input_database<span class="se">\\</span>gcbm_input.db
 </pre></div>
 </div>
 </div>
 <p>Description : Modify root parameters</p>
-</div>
-<div class="section" id="step-5">
+</section>
+<section id="step-5">
 <h3>Step 5<a class="headerlink" href="#step-5" title="Permalink to this heading">#</a></h3>
 <p>Working directory : <strong>Standalone_GCBM</strong></p>
 <div class="literal-block-wrapper docutils container" id="id5">
 <div class="code-block-caption"><span class="caption-text">Command</span><a class="headerlink" href="#id5" title="Permalink to this code">#</a></div>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>    c:<span class="se">\\</span>python37<span class="se">\\</span>python.exe input_database<span class="se">\\</span>modify_decay_parameters.py input_database<span class="se">\\</span>gcbm_input.db
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="w">    </span>c:<span class="se">\\</span>python37<span class="se">\\</span>python.exe<span class="w"> </span>input_database<span class="se">\\</span>modify_decay_parameters.py<span class="w"> </span>input_database<span class="se">\\</span>gcbm_input.db
 </pre></div>
 </div>
 </div>
 <p>Description : Modify decay parameters</p>
-</div>
-<div class="section" id="step-6">
+</section>
+<section id="step-6">
 <h3>Step 6<a class="headerlink" href="#step-6" title="Permalink to this heading">#</a></h3>
 <p>Working directory : <strong>Standalone_GCBM</strong></p>
 <div class="literal-block-wrapper docutils container" id="id6">
 <div class="code-block-caption"><span class="caption-text">Command</span><a class="headerlink" href="#id6" title="Permalink to this code">#</a></div>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>    c:<span class="se">\\</span>python37<span class="se">\\</span>python.exe input_database<span class="se">\\</span>modify_turnover_parameters.py input_database<span class="se">\\</span>gcbm_input.db
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="w">    </span>c:<span class="se">\\</span>python37<span class="se">\\</span>python.exe<span class="w"> </span>input_database<span class="se">\\</span>modify_turnover_parameters.py<span class="w"> </span>input_database<span class="se">\\</span>gcbm_input.db
 </pre></div>
 </div>
 </div>
 <p>Description : Modify turnover parameters</p>
-</div>
-<div class="section" id="step-7">
+</section>
+<section id="step-7">
 <h3>Step 7<a class="headerlink" href="#step-7" title="Permalink to this heading">#</a></h3>
 <p>Working directory : <strong>Standalone_GCBM</strong></p>
 <div class="literal-block-wrapper docutils container" id="id7">
 <div class="code-block-caption"><span class="caption-text">Command</span><a class="headerlink" href="#id7" title="Permalink to this code">#</a></div>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>    c:<span class="se">\\</span>python37<span class="se">\\</span>python.exe input_database<span class="se">\\</span>modify_spinup_parameters.py input_database<span class="se">\\</span>gcbm_input.db
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="w">    </span>c:<span class="se">\\</span>python37<span class="se">\\</span>python.exe<span class="w"> </span>input_database<span class="se">\\</span>modify_spinup_parameters.py<span class="w"> </span>input_database<span class="se">\\</span>gcbm_input.db
 </pre></div>
 </div>
 </div>
 <p>Description : Modify spinup parameters</p>
-</div>
-<div class="section" id="step-8">
+</section>
+<section id="step-8">
 <h3>Step 8<a class="headerlink" href="#step-8" title="Permalink to this heading">#</a></h3>
 <p>Working directory : <strong>Standalone_GCBM\gcbm_project</strong></p>
 <div class="literal-block-wrapper docutils container" id="id8">
 <div class="code-block-caption"><span class="caption-text">Command</span><a class="headerlink" href="#id8" title="Permalink to this code">#</a></div>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>    update_gcbm_configuration.bat
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="w">    </span>update_gcbm_configuration.bat
 </pre></div>
 </div>
 </div>
@@ -340,13 +341,13 @@ It helps in understanding the sequence of steps, inputs, outputs and dependencie
 </li>
 </ol>
 <p>Output :  Logs generated in <cite>Standalone_GCBM\logs\update_gcbm_config.log</cite></p>
-</div>
-<div class="section" id="step-9">
+</section>
+<section id="step-9">
 <h3>Step 9<a class="headerlink" href="#step-9" title="Permalink to this heading">#</a></h3>
 <p>Working directory : <strong>Standalone_GCBM\gcbm_project</strong></p>
 <div class="literal-block-wrapper docutils container" id="id9">
 <div class="code-block-caption"><span class="caption-text">Command</span><a class="headerlink" href="#id9" title="Permalink to this code">#</a></div>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>    run_gcbm.bat
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="w">    </span>run_gcbm.bat
 </pre></div>
 </div>
 </div>
@@ -359,13 +360,13 @@ It helps in understanding the sequence of steps, inputs, outputs and dependencie
 <ul class="simple">
 <li><p>Output : Logs generated in <cite>Standalone_GCBM\logs\Moja_Debug.log</cite></p></li>
 </ul>
-</div>
-<div class="section" id="step-10">
+</section>
+<section id="step-10">
 <h3>Step 10<a class="headerlink" href="#step-10" title="Permalink to this heading">#</a></h3>
 <p>Working directory : <strong>Standalone_GCBM\tools\CompileGCBMSpatialOutput</strong></p>
 <div class="literal-block-wrapper docutils container" id="id10">
 <div class="code-block-caption"><span class="caption-text">Command</span><a class="headerlink" href="#id10" title="Permalink to this code">#</a></div>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>    create_tiffs.bat
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="w">    </span>create_tiffs.bat
 </pre></div>
 </div>
 </div>
@@ -379,13 +380,13 @@ It helps in understanding the sequence of steps, inputs, outputs and dependencie
 <li><p>A tiff layer per indicator and timestep in <cite>processed_output\spatial</cite></p></li>
 <li><p>Logs written into <cite>Standalone_GCBM\logs\create_tiffs.log</cite></p></li>
 </ol>
-</div>
-<div class="section" id="step-11">
+</section>
+<section id="step-11">
 <h3>Step 11<a class="headerlink" href="#step-11" title="Permalink to this heading">#</a></h3>
 <p>Working directory : <strong>Standalone_GCBM\tools\CompileGCBMResults</strong></p>
 <div class="literal-block-wrapper docutils container" id="id11">
 <div class="code-block-caption"><span class="caption-text">Command</span><a class="headerlink" href="#id11" title="Permalink to this code">#</a></div>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>    compileGCBMResults.bat
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="w">    </span>compileGCBMResults.bat
 </pre></div>
 </div>
 </div>
@@ -395,9 +396,9 @@ It helps in understanding the sequence of steps, inputs, outputs and dependencie
 <li><p>Turns the raw GCBM output database into a more user-friendly format containing most of the familiar indicators from the CBM3 Toolbox</p></li>
 <li><p>Produces <cite>processed_output\compiled_gcbm_output.db</cite></p></li>
 </ol>
-</div>
-</div>
-</div>
+</section>
+</section>
+</section>
 
         </article>
       </div>
@@ -436,9 +437,7 @@ It helps in understanding the sequence of steps, inputs, outputs and dependencie
             
           </div>
           <div class="right-details">
-            <div class="icons">
-              
-            </div>
+            
           </div>
         </div>
         
@@ -485,9 +484,6 @@ It helps in understanding the sequence of steps, inputs, outputs and dependencie
     </aside>
   </div>
 </div><script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
-    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../_static/doctools.js"></script>
     <script src="../_static/sphinx_highlight.js"></script>
     <script src="../_static/scripts/furo.js"></script>
